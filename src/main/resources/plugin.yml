@@ -1,0 +1,6 @@
+name: MakeItemsGreatAgain
+version: '${project.version}'
+main: miga.miga.MakeItemsGreatAgain
+api-version: 1.19
+authors: [ EugenGoldkin ]
+description: Adds some custom recipes and items
