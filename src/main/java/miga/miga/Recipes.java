@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.plugin.Plugin;
@@ -39,7 +40,7 @@ public class Recipes {
         Bukkit.addRecipe(enchantedGoldenAppleRecipe);
     }
 
-    public static void addAmethystShard(Plugin plugin){
+    public static void addAmethystShardRecipe(Plugin plugin){
 
         ShapelessRecipe amethystShardRecipe = new ShapelessRecipe(
                 new NamespacedKey(plugin,"amethystShard"),
@@ -50,7 +51,7 @@ public class Recipes {
         Bukkit.addRecipe(amethystShardRecipe);
     }
 
-    public static void addNetherQuartz(Plugin plugin){
+    public static void addNetherQuartzRecipe(Plugin plugin){
 
         ShapelessRecipe netherQuartzRecipe = new ShapelessRecipe(
                 new NamespacedKey(plugin,"netherQuartz"),
@@ -60,6 +61,20 @@ public class Recipes {
 
         Bukkit.addRecipe(netherQuartzRecipe);
     }
+
+    public static void addSlowArrow(Plugin plugin){
+        ShapedRecipe slowArrowRecipe = new ShapedRecipe(
+                new NamespacedKey(plugin,"slowArrow"),
+                CustomItems.getSlowArrow(64));
+
+        slowArrowRecipe.shape("BBB", "BAB", "BBB");
+
+        slowArrowRecipe.setIngredient('A', Material.FERMENTED_SPIDER_EYE);
+        slowArrowRecipe.setIngredient('B', new RecipeChoice.ExactChoice(new ItemStack(Material.ARROW, 8)));
+
+        Bukkit.addRecipe(slowArrowRecipe);
+    }
+
 
 
 }
